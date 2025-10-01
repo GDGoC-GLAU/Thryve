@@ -1,16 +1,43 @@
-# thryve
+# 🌱 Thryve  
 
-A new Flutter project.
+**Thryve** is a productivity + health companion app built with **Flutter**.  
+It helps you stay focused, motivated, and healthy while working or studying by combining **mindfulness, wellness, and productivity** features.  
 
-## Getting Started
+---
 
-This project is a starting point for a Flutter application.
+## ✨ Features (Planned & In Progress)
 
-A few resources to get you started if this is your first Flutter project:
+- ✅ **Motivational Quotes Notifications** – get uplifting reminders throughout the day.  
+- 🚧 **Meditation Timer** – customize meditation sessions with soothing sounds.  
+- 🚧 **Water Tracking & Reminder** – log water intake and receive hydration reminders.  
+- 🚧 **Still-Too-Long Reminder** – gentle nudges to stretch or move if sitting idle too long.  
+- 🚧 **Productivity Mode** – focus timer with health breaks included.  
+- 🚧 **Daily Insights** – track your health + productivity stats at a glance.  
+- 🚧 **Theming & Customization** – dark mode, theme colors, and personalized quote categories.  
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+---
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠 Tech Stack  
+
+- **Flutter** (Dart)  
+- **Riverpod** (state management)  
+- **Firebase** (Auth, Firestore, Notifications)  
+- **Local Notifications** (Android/iOS)  
+
+---
+
+## 🤝 How to Contribute  
+
+Check our [Contributing Guide](CONTRIBUTING.md) for setup instructions.  
+
+Some starter tasks for contributors:  
+- Add new motivational quote categories.  
+- Build meditation timer UI.  
+- Implement hydration reminder logic.  
+- Add analytics dashboard for daily stats.  
+- Improve UI with animations.  
+
+---
+
+## 📸 Screenshots (Coming Soon)  
+*(We’ll add design mockups here soon — feel free to contribute!)*
