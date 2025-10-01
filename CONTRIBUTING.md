@@ -13,8 +13,8 @@ Whether it’s fixing a bug, adding a feature, improving docs, or writing tests 
 2. **Clone** your fork locally:
 
    ```bash
-   git clone https://github.com/GDGoC-GLAU/Convoke.git
-   cd convoke
+   git clone https://github.com/GDGoC-GLAU/thryve.git
+   cd thryve
    ```
 3. **Create a branch** for your contribution:
 
