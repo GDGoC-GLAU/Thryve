@@ -7,7 +7,7 @@ It helps you stay focused, motivated, and healthy while working or studying by c
 
 ## ✨ Features (Planned & In Progress)
 
-- ✅ **Motivational Quotes Notifications** – get uplifting reminders throughout the day.  
+- 🚧 **Motivational Quotes Notifications** – get uplifting reminders throughout the day.  
 - 🚧 **Meditation Timer** – customize meditation sessions with soothing sounds.  
 - 🚧 **Water Tracking & Reminder** – log water intake and receive hydration reminders.  
 - 🚧 **Still-Too-Long Reminder** – gentle nudges to stretch or move if sitting idle too long.  
