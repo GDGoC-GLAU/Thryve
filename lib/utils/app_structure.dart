@@ -2,6 +2,7 @@ import 'package:custom_navigation_bar/custom_navigation_bar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:thryve/screens/screen.dart';
 
 import 'constants/export.dart';
 
@@ -24,15 +25,7 @@ class _AppStructureState extends State<AppStructure> {
         ),
       ),
     ),
-
-    Scaffold(
-      body: Center(
-        child: Text(
-          'Explore',
-          style: TextStyle(fontSize: 24, fontFamily: 'Gilroy'),
-        ),
-      ),
-    ),
+  FocusScreen(),
     Scaffold(
       body: Center(
         child: Text(
