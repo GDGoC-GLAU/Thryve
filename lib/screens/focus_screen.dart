@@ -1,34 +1,37 @@
 import 'package:flutter/material.dart';
 
+// A stateless widget for the Focus Screen
 class FocusScreen extends StatelessWidget {
   const FocusScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return SafeArea( // Ensures UI stays within safe boundaries (notch, status bar, etc.)
       child: Padding(
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            _buildAppBar(),
+            _buildAppBar(), // Custom app bar with back & settings buttons
             const SizedBox(height: 50),
-            _buildReadyToFocusText(),
+            _buildReadyToFocusText(), // "READY TO FOCUS" header
             const SizedBox(height: 30),
-            _buildFlightInfo(),
+            _buildFlightInfo(), // Displays flight info (DXB -> SEO)
             const SizedBox(height: 30),
-            _buildBoardingPass(),
-            const Spacer(),
-            _buildBoardingButton(),
+            _buildBoardingPass(), // Ticket UI with peel + barcode
+            const Spacer(), // Pushes button to bottom of the screen
+            _buildBoardingButton(), // Boarding button
           ],
         ),
       ),
     );
   }
 
+  // Builds the custom top bar with back & settings icons
   Widget _buildAppBar() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
+        // Back button (left)
         Container(
           width: 40,
           height: 40,
@@ -38,6 +41,7 @@ class FocusScreen extends StatelessWidget {
           ),
           child: const Icon(Icons.arrow_back, color: Colors.black, size: 24),
         ),
+        // Settings button (right)
         Container(
           width: 40,
           height: 40,
@@ -51,11 +55,12 @@ class FocusScreen extends StatelessWidget {
     );
   }
 
+  // "READY TO FOCUS" header text
   Widget _buildReadyToFocusText() {
     return const Text(
       'READY TO FOCUS',
       style: TextStyle(
-        fontFamily: 'SF Pro Display', // Assuming a similar font to SF Pro
+        fontFamily: 'SF Pro Display',
         fontSize: 18,
         fontWeight: FontWeight.bold,
         color: Colors.black,
@@ -64,6 +69,7 @@ class FocusScreen extends StatelessWidget {
     );
   }
 
+  // Flight route info (DXB -> SEO with flight icon)
   Widget _buildFlightInfo() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -93,29 +99,29 @@ class FocusScreen extends StatelessWidget {
     );
   }
 
+  // Boarding pass container with peel text and barcode
   Widget _buildBoardingPass() {
     return Container(
-      width: 250, // Adjusted width to better match the screenshot
-      height: 300, // Adjusted height
+      width: 250,
+      height: 300,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
         border: Border.all(color: Colors.black, width: 3),
         boxShadow: const [
+          // Shadow effect to simulate depth
           BoxShadow(
             color: Colors.black,
             spreadRadius: 0,
             blurRadius: 0,
-            offset: Offset(
-              8,
-              8,
-            ), // Right and bottom offset for the shadow effect
+            offset: Offset(8, 8), // Offset for shadow (bottom-right)
           ),
         ],
       ),
       child: Stack(
         alignment: Alignment.center,
         children: [
+          // Main ticket text & barcode
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -153,7 +159,7 @@ class FocusScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 30),
-              // Barcode and scissors
+              // Barcode row with scissors
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 child: Row(
@@ -168,7 +174,7 @@ class FocusScreen extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Image.asset(
-                          'assets/barcode.png', // You'll need to add a barcode image to your assets
+                          'assets/barcode.png', // Barcode image (add in assets folder)
                           fit: BoxFit.fill,
                           height: 50,
                         ),
@@ -179,15 +185,15 @@ class FocusScreen extends StatelessWidget {
               ),
             ],
           ),
+          // Bottom edge to simulate ticket cut
           Positioned(
-            bottom:
-                -1, // Adjust to make it look like part of the border cutting
+            bottom: -1,
             child: Container(
-              width: 245, // Slightly less than the outer container
+              width: 245,
               height: 25,
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.only(
+                borderRadius: const BorderRadius.only(
                   bottomLeft: Radius.circular(15),
                   bottomRight: Radius.circular(15),
                 ),
@@ -196,7 +202,7 @@ class FocusScreen extends StatelessWidget {
                     color: Colors.black,
                     width: 3,
                     style: BorderStyle.solid,
-                  ), // Dashed line
+                  ),
                 ),
               ),
             ),
@@ -206,6 +212,7 @@ class FocusScreen extends StatelessWidget {
     );
   }
 
+  // Bottom "BOARDING" button
   Widget _buildBoardingButton() {
     return Container(
       width: double.infinity,
