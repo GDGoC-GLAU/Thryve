@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
 class FocusScreen extends StatelessWidget {
+  const FocusScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -10,7 +13,7 @@ class FocusScreen extends StatelessWidget {
             _buildAppBar(),
             const SizedBox(height: 50),
             _buildReadyToFocusText(),
-            const SizedBox(height: 50),
+            const SizedBox(height: 30),
             _buildFlightInfo(),
             const SizedBox(height: 30),
             _buildBoardingPass(),
@@ -103,7 +106,10 @@ class FocusScreen extends StatelessWidget {
             color: Colors.black,
             spreadRadius: 0,
             blurRadius: 0,
-            offset: Offset(8, 8), // Right and bottom offset for the shadow effect
+            offset: Offset(
+              8,
+              8,
+            ), // Right and bottom offset for the shadow effect
           ),
         ],
       ),
@@ -153,7 +159,11 @@ class FocusScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Icon(Icons.content_cut, color: Colors.black, size: 30),
+                    const Icon(
+                      Icons.content_cut,
+                      color: Colors.black,
+                      size: 30,
+                    ),
                     Expanded(
                       child: Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -170,7 +180,8 @@ class FocusScreen extends StatelessWidget {
             ],
           ),
           Positioned(
-            bottom: -1, // Adjust to make it look like part of the border cutting
+            bottom:
+                -1, // Adjust to make it look like part of the border cutting
             child: Container(
               width: 245, // Slightly less than the outer container
               height: 25,
@@ -181,7 +192,11 @@ class FocusScreen extends StatelessWidget {
                   bottomRight: Radius.circular(15),
                 ),
                 border: Border(
-                  top: BorderSide(color: Colors.black, width: 3, style: BorderStyle.solid), // Dashed line
+                  top: BorderSide(
+                    color: Colors.black,
+                    width: 3,
+                    style: BorderStyle.solid,
+                  ), // Dashed line
                 ),
               ),
             ),

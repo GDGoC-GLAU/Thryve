@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
 
 class SeatSelectionScreen extends StatelessWidget {
+  const SeatSelectionScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: [
-            _buildAppBar(),
-            const SizedBox(height: 30),
-            _buildSeatGrid(),
-            const Spacer(),
-            _buildWelcomeAboardText(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              _buildAppBar(),
+              const SizedBox(height: 30),
+              _buildSeatGrid(),
+            ],
+          ),
         ),
       ),
     );
@@ -35,7 +37,8 @@ class SeatSelectionScreen extends StatelessWidget {
         const Text(
           'SELECT YOUR SEAT',
           style: TextStyle(
-            fontFamily: 'SF Pro Display', // Using SF Pro Display as a placeholder
+            fontFamily:
+                'SF Pro Display', // Using SF Pro Display as a placeholder
             fontSize: 18,
             fontWeight: FontWeight.bold,
             color: Colors.black,
@@ -57,13 +60,34 @@ class SeatSelectionScreen extends StatelessWidget {
 
   Widget _buildSeatGrid() {
     final List<String> seats = [
-      'A1', 'A2', 'A3', 'A4',
-      'B1', 'B2', 'B3', 'B4',
-      'C1', 'C2', 'C3', 'C4',
-      'D1', 'D2', 'D3', 'D4',
-      'E1', 'E2', 'E3', 'E4',
-      'F1', 'F2', 'F3', 'F4',
-      'G1', 'G2', 'G3', 'G4',
+      'A1',
+      'A2',
+      'A3',
+      'A4',
+      'B1',
+      'B2',
+      'B3',
+      'B4',
+      'C1',
+      'C2',
+      'C3',
+      'C4',
+      'D1',
+      'D2',
+      'D3',
+      'D4',
+      'E1',
+      'E2',
+      'E3',
+      'E4',
+      'F1',
+      'F2',
+      'F3',
+      'F4',
+      'G1',
+      'G2',
+      'G3',
+      'G4',
     ];
 
     return Container(
@@ -77,7 +101,9 @@ class SeatSelectionScreen extends StatelessWidget {
         children: [
           for (int i = 0; i < 7; i++)
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 8.0), // Spacing between rows
+              padding: EdgeInsets.symmetric(
+                vertical: 8.0,
+              ), // Spacing between rows
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -89,8 +115,14 @@ class SeatSelectionScreen extends StatelessWidget {
                   if (i != 2) // Empty placeholder for other rows
                     const SizedBox(width: 20),
                   const SizedBox(width: 20), // Space for the aisle
-                  _buildSeatButton(seats[i * 4 + 2], isSelected: (i == 2 && seats[i * 4 + 2] == 'C3')),
-                  _buildSeatButton(seats[i * 4 + 3], isOccupied: (i == 2 && seats[i * 4 + 3] == 'C4')),
+                  _buildSeatButton(
+                    seats[i * 4 + 2],
+                    isSelected: (i == 2 && seats[i * 4 + 2] == 'C3'),
+                  ),
+                  _buildSeatButton(
+                    seats[i * 4 + 3],
+                    isOccupied: (i == 2 && seats[i * 4 + 3] == 'C4'),
+                  ),
                 ],
               ),
             ),
@@ -99,7 +131,11 @@ class SeatSelectionScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildSeatButton(String seatNumber, {bool isSelected = false, bool isOccupied = false}) {
+  Widget _buildSeatButton(
+    String seatNumber, {
+    bool isSelected = false,
+    bool isOccupied = false,
+  }) {
     Color backgroundColor;
     Color borderColor = Colors.black;
     Color textColor = Colors.black;
@@ -145,31 +181,21 @@ class SeatSelectionScreen extends StatelessWidget {
   Widget _buildAisleText() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
-      children: 'ISLE'.split('').map((char) =>
-          Text(
-            char,
-            style: const TextStyle(
-              fontFamily: 'SF Pro Display',
-              fontSize: 16,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              letterSpacing: 1.0,
+      children: 'ISLE'
+          .split('')
+          .map(
+            (char) => Text(
+              char,
+              style: const TextStyle(
+                fontFamily: 'SF Pro Display',
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+                letterSpacing: 1.0,
+              ),
             ),
           )
-      ).toList(),
-    );
-  }
-
-  Widget _buildWelcomeAboardText() {
-    return const Text(
-      'WELCOME ABOARD',
-      style: TextStyle(
-        fontFamily: 'SF Pro Display', // Using SF Pro Display as a placeholder
-        fontSize: 24,
-        fontWeight: FontWeight.bold,
-        color: Colors.black,
-        letterSpacing: 2,
-      ),
+          .toList(),
     );
   }
 }
