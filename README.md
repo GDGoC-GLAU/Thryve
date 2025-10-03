@@ -36,7 +36,11 @@ Some starter tasks for contributors:
 - Implement hydration reminder logic.  
 - Add analytics dashboard for daily stats.  
 - Improve UI with animations.  
-
+- Create a profile page for users.
+- Build settings page (customize reminders, sound, theme).
+- Create share button for quotes / stats.
+- Enable social login (Google, GitHub).
+- Add search functionality for quotes.
 ---
 
 ## 📸 Screenshots (Coming Soon)  
